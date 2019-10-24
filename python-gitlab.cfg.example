@@ -1,0 +1,11 @@
+# Copy this file to python-gitlab.cfg and enter your private token.
+[global]
+default = zgtools
+ssl_verify = true
+timeout = 5
+
+[zgtools]
+url = https://gitlab.zgtools.net
+# Generate a token from https://gitlab.zgtools.net/profile/personal_access_tokens
+private_token = <private token>
+api_version = 4
