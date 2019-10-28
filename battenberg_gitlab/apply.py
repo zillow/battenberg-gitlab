@@ -64,6 +64,7 @@ def apply(gl: Gitlab,
           project_filter: str = None,
           workspace_path: str = None,
           checkout: str = None):
+    logger.info(f'Searching Gitlab for projects matching "{project_filter}".')
     projects = get_projects(gl, group_ids, project_filter)
     if not projects:
         raise Exception('No projects found')

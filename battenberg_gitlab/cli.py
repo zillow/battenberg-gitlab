@@ -19,7 +19,7 @@ def main(config_file: str = None,
          group_ids: List[int] = None,
          project_filter: str = 'archetype.py-ml',
          workspace_path: str = None,
-         checkout: str = 'archetypev1.1'):
+         checkout: str = 'v1.1.0'):
 
     # TODO Remove hard-code of zoml Gitlab group.
     group_ids = [109, 108, 106]
