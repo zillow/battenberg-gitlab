@@ -2,7 +2,7 @@ import os
 import logging
 import tempfile
 from gitlab import Gitlab
-from pygit2 import clone_repository, discover_repository, Keypair, RemoteCallbacks, Repository
+from pygit2 import clone_repository, discover_repository, RemoteCallbacks, Repository
 from battenberg import construct_keypair
 
 
@@ -31,6 +31,6 @@ def clone_or_discover_repo(repo_url: str, local_path: str) -> Repository:
     except Exception:
         # Not found any repo, let's make one.
         pass
-    
+
     keypair = construct_keypair()
     return clone_repository(repo_url, local_path, callbacks=RemoteCallbacks(credentials=keypair))
