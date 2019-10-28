@@ -30,7 +30,7 @@ def main(config_file: str = None,
 
     project_filters = parse_project_filters(project_filters)
 
-    gl = init_gitlab(config_file, gitlab_server)
+    gl = init_gitlab(gitlab_server, config_file)
     apply(gl, group_ids, project_filters, workspace_path, checkout)
 
 

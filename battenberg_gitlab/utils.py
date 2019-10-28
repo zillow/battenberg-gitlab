@@ -9,7 +9,7 @@ from battenberg import construct_keypair
 logger = logging.getLogger(__name__)
 
 
-def init_gitlab(config_file: str, gitlab_server: str) -> Gitlab:
+def init_gitlab(gitlab_server: str, config_file: str = None) -> Gitlab:
     if not config_file:
         config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
                                                    'python-gitlab.cfg'))
