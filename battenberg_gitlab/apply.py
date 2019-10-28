@@ -4,6 +4,7 @@ from typing import List
 from gitlab import Gitlab
 from battenberg import Battenberg
 from battenberg.errors import MergeConflictException
+from battenberg_gitlab.errors import ProjectNotFoundError
 from battenberg_gitlab.search import get_projects
 from battenberg_gitlab.utils import clone_or_discover_repo, ensure_workspace
 
@@ -19,7 +20,7 @@ def apply(gl: Gitlab,
     logger.info(f'Searching Gitlab for projects matching "{project_filter}".')
     projects = get_projects(gl, group_ids, project_filter)
     if not projects:
-        raise Exception('No projects found')
+        raise ProjectNotFoundError('No projects found')
 
     # Create a working directory where we can clone all the projects we've found into.
     workspace_path = ensure_workspace(workspace_path)
