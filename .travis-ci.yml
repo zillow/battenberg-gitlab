@@ -1,0 +1,27 @@
+language: python
+matrix:
+  include:
+  - name: Python 3.6
+    python: 3.6
+  - name: Python 3.7
+    python: 3.7
+install:
+- echo "Install starting"
+- pip3 install ".[dev]"
+- echo "Install ending"
+script:
+- echo "Script starting"
+- flake8 --config flake8.cfg battenberg_gitlab
+- pytest --cov=battenberg_gitlab
+- codecov
+- echo "Script ending"
+# deploy:
+#   provider: pypi
+#   user: __token__
+#   password:
+#     # This is an encrypted copy of the PyPI API token which you get from your PyPI Account Settings page.
+#     # Generated using: travis encrypt <pypi api token> --add deploy.password
+#     secure: 
+#   on:
+#     tags: true
+#   skip_existing: true
