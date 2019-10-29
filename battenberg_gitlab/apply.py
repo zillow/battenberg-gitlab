@@ -40,7 +40,7 @@ def apply(gl: Gitlab,
                 merge_target=f'archetype-update-{checkout}'
             )
         except MergeConflictException:
-            logger.error(f'Merge conflicts found for {project.name} in {local_path}')
+            logger.warning(f'Merge conflicts found for {project.name} in {local_path}')
             merge_conflicts.append({
                 'project': project,
                 'local_path': local_path
