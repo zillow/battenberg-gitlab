@@ -3,7 +3,6 @@ from typing import List
 from gitlab import Gitlab
 from battenberg import Battenberg
 from battenberg.errors import MergeConflictException
-from battenberg_gitlab.errors import ProjectNotFoundError
 from battenberg_gitlab.search import clone_projects, ProjectFilters
 
 
