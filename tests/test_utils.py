@@ -24,9 +24,9 @@ def discover_repository():
 ))
 @patch('battenberg_gitlab.utils.Gitlab.from_config')
 def test_init_gitlab(from_config, config_file, expected):
-    gitlab_server = 'test-gitlab_server'
-    assert init_gitlab(gitlab_server, config_file) == from_config.return_value
-    from_config.assert_called_once_with(gitlab_server, [expected])
+    gitlab_id = 'test-gitlab_id'
+    assert init_gitlab(gitlab_id, config_file) == from_config.return_value
+    from_config.assert_called_once_with(gitlab_id, [expected])
 
 
 @patch('battenberg_gitlab.utils.tempfile')

@@ -15,6 +15,7 @@ with io.open('battenberg_gitlab/__init__.py', 'rt', encoding='utf8') as f:
 
 install_requires = [
     'battenberg>=0.2.0',
+    'click>=1.6.0',
     'python-gitlab>=1.12.0',
     # You'll also need to install libgit2 to get this to work.
     # See instructions here: https://www.pygit2.org/install.html

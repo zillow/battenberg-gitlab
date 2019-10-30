@@ -9,12 +9,12 @@ from battenberg import construct_keypair
 logger = logging.getLogger(__name__)
 
 
-def init_gitlab(gitlab_server: str, config_file: str = None) -> Gitlab:
+def init_gitlab(gitlab_id: str = None, config_file: str = None) -> Gitlab:
     if not config_file:
         config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
                                                    'python-gitlab.cfg'))
-    logger.debug(f'Reading gitlab config from {config_file}')
-    return Gitlab.from_config(gitlab_server, [config_file])
+    logger.debug(f'Reading gitlab config for gitlab id {gitlab_id} from {config_file}')
+    return Gitlab.from_config(gitlab_id, [config_file])
 
 
 def ensure_workspace(workspace_path: str = None) -> str:
