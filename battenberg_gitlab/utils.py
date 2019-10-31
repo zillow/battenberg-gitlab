@@ -9,12 +9,22 @@ from battenberg import construct_keypair
 logger = logging.getLogger(__name__)
 
 
-def init_gitlab(gitlab_server: str, config_file: str = None) -> Gitlab:
+def init_gitlab(gitlab_id: str = None, config_file: str = None) -> Gitlab:
+    """Initializes a python-gitlab Gitlab object with a default configuration file.
+
+    Args:
+        gitlab_id: The name of the python-gitlab configuration profile. See:
+            https://python-gitlab.readthedocs.io/en/stable/cli.html#cli-configuration
+        config_file: A file path to the python-gitlab.cfg file.
+
+    Returns:
+        A python-gitlab Gitlab instance which can be used for easily accessing the Gitlab API.
+    """
     if not config_file:
         config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
                                                    'python-gitlab.cfg'))
-    logger.debug(f'Reading gitlab config from {config_file}')
-    return Gitlab.from_config(gitlab_server, [config_file])
+    logger.debug(f'Reading gitlab config for gitlab id {gitlab_id} from {config_file}')
+    return Gitlab.from_config(gitlab_id, [config_file])
 
 
 def ensure_workspace(workspace_path: str = None) -> str:
