@@ -16,6 +16,9 @@ Until that work is done though you can install it via:
 git clone git@github.com:zillow/battenberg-gitlab.git
 cd battenberg-gitlab
 pip install .
+cp python-gitlab.cfg.example python-gitlab.cfg
+# Generate a Gitlab API token and paste it in as appropriate.
+vi python-gitlab.cfg
 ```
 
 ## Usage
