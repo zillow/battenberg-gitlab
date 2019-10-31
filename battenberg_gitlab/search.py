@@ -59,7 +59,7 @@ def get_projects(gl: Gitlab, group_names: List[str] = None,
         projects = filter_projects(projects, project_filters)
 
     if not projects:
-        raise ProjectNotFoundError('No projects found')
+        raise ProjectNotFoundError(f'No projects found in groups: {group_names}')
 
     return projects
 

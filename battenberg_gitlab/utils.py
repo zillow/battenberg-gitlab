@@ -10,6 +10,16 @@ logger = logging.getLogger(__name__)
 
 
 def init_gitlab(gitlab_id: str = None, config_file: str = None) -> Gitlab:
+    """Initializes a python-gitlab Gitlab object with a default configuration file.
+
+    Args:
+        gitlab_id: The name of the python-gitlab configuration profile. See:
+            https://python-gitlab.readthedocs.io/en/stable/cli.html#cli-configuration
+        config_file: A file path to the python-gitlab.cfg file.
+
+    Returns:
+        A python-gitlab Gitlab instance which can be used for easily accessing the Gitlab API.
+    """
     if not config_file:
         config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
                                                    'python-gitlab.cfg'))

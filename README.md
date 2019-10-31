@@ -40,7 +40,7 @@ battenberg_gitlab search \
     [--project-filter <filter type>=<keyword>] \
     [--group-name <group name>] \
     [--workspace <path>]
-# For example: battenberg_gitlab search --filter tag=archetype.py-ml --group-name zoml
+# For example: battenberg_gitlab search --project-filter tag=archetype.py-ml --group-name zoml
 ```
 
 This will return a list of all matched projects and the latest commit message from the `template` branch.
@@ -59,7 +59,7 @@ battenberg_gitlab apply \
     [--project-filter <filter type>=<keyword>] \
     [--group-name <group name>] \
     [--workspace <path>]
-# For example: battenberg_gitlab apply --checkout v1.1.0 --filter tag=archetype.py-ml --group-name zoml
+# For example: battenberg_gitlab apply --checkout v1.1.0 --project-filter tag=archetype.py-ml --group-name zoml
 ```
 
 * `--checkout` - Template branch, tag or commit to checkout to apply the upgrade from.
