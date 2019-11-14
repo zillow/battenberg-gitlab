@@ -15,11 +15,16 @@ Until that work is done though you can install it via:
 ```bash
 git clone git@github.com:zillow/battenberg-gitlab.git
 cd battenberg-gitlab
+# If you don't want to install this globally run
+python3 -m venv env && source env/bin/activate
 pip install .
 cp python-gitlab.cfg.example python-gitlab.cfg
 # Generate a Gitlab API token and paste it in as appropriate.
 vi python-gitlab.cfg
 ```
+
+If you're on Mac OS X or Windows please follow the [installation guides](https://www.pygit2.org/install.html#) in the `pygit2` documentation
+as well as `battenberg` relies on `libgit2` which needs to be installed first.
 
 ## Usage
 
